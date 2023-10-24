@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Piedra, papel, tijera, lagarto o Spock</title>
+    <h1>Piedra, papel, tijera, lagarto o Spock</h1>
+</head>
+<body>
+    <header>
+        <div class="input-group">
+            <p>Introduzca su nombre:</p>
+            <input type="text" id="nombre-jugador" placeholder="Escribe tu nombre aquí...">
+        </div>
+        <button id="boton-jugar">¡Jugar ya!</button>
+    </header>
+    <main>
+        <div id="player1">
+            <img src="images\piedra.png" alt="Piedra" class="players">
+            <img src="images\papel.png" alt="Papel" class="players">
+            <img src="images\tijeras.png" alt="Tijeras" class="players">
+            <img src="images\lagarto.png" alt="Lagarto" class="players">
+            <img src="images\spock.png" alt="Spock" class="players">
+        </div>
+        <div id="game">
+            <div id="contador">
+                <div id="nombre-jugador-pantalla">
+                    <p>JUGADOR 1</p>
+                </div>
+                <div id="marcador-jugador1">
+                    <p>3</p>
+                </div>
+                <div id="marcador-divisor">
+                    <p>-</p>
+                </div>
+                <div id="marcador-computer">
+                    <p>0</p>
+                </div>
+                <div id="nombre-rival-pantalla">
+                    <p>COMPUTER</p>
+                </div>
+            </div>
+            <div id="partida">
+                <img src="images/blank.png" alt="Player 1" class="eleccion-player1">
+                <img src="images\vs.png" alt="VS" class="vs">
+                <img src="images/blank.png" alt="Player 2" class="eleccion-player2">
+            </div>
+            <div id="anuncio">
+                <img src="images/blank.png" alt="resultado" class="resultado">
+            </div>
+
+        </div>
+        <div id ="player2">
+            <img src="images\piedra.png" alt="Piedra" class="players">
+            <img src="images\papel.png" alt="Papel" class="players">
+            <img src="images\tijeras.png" alt="Tijeras" class="players">
+            <img src="images\lagarto.png" alt="Lagarto" class="players">
+            <img src="images\spock.png" alt="Spock" class="players">
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
