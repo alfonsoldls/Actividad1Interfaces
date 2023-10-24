@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="codigo.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, papel, tijeras, lagarto, spock </title>
+    <link rel="stylesheet" href="elementos.css">
+    </head>
+    <body>
+        <header class="titulo">
+            <h1>PIEDRA - PAPEL - TIJERAS - LAGARTO - SPOCK</h1>
+        </header>
+        <form>
+            Nombre jugador: <input type="text" id="cajaNombre" > <span id="errorNombre"></span>
+            <input type="button" value="Jugar" id="botonJugar" />
+        </form>
+        <main>
+            <p class="instrucciones" id="instrucciones"></p>
+            <h2>Ganará el mejor de tres</h2>
+            <div class="marcador">
+                <p class="nombreJugador">Jugador</p>
+                <p class="nombreOponente">Ordenador</p>
+                <p class="puntos">
+                    <span id="puntosJugador">0</span>
+                    <span>-</span>
+                    <span id="puntosOponente">0</span>
+                </p>
+            </div>
+            <div class="eligeOpcion">
+                <div class="opcionesPosibles">
+                    <button class="opcion" id="piedra">🪨</button>
+                    <button class="opcion" id="papel">📋</button>
+                    <button class="opcion" id="tijeras">✂️</button>
+                    <button class="opcion" id="lagarto">🦎</button>
+                    <button class="opcion" id="spock">🖖</button>
+                </div>
+            </div>
+            <div class="mensaje" id="mensaje">
+                <p id="ganaPunto">🎉 !Ganaste! 🎉</p>
+            </div>
+            <button class="boton" id="botonReiniciar">Jugar de nuevo</button>
+        </main>  
+    </body>    
+</html>
+
