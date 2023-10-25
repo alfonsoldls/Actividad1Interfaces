@@ -11,6 +11,11 @@ let papelComputer;
 let tijerasComputer;
 let lagartoComputer;
 let spockComputer;
+let imagenPiedra;
+let imagenPapel;
+let imagenTijeras;
+let imagenLagarto;
+let imagenSpock;
 
 
 function resultadoComputer(){
@@ -255,6 +260,66 @@ function todosBlanco(){
     spockComputer.style.background = "white";
 }
 
+function sobrePiedra(){
+    piedra.style.width = "130px";
+    piedra.style.height = "130px";
+    piedra.style.background = "yellow";
+}
+
+function sobrePapel(){
+    papel.style.width = "130px";
+    papel.style.height = "130px";
+    papel.style.background = "yellow";
+}
+
+function sobreTijeras(){
+    tijeras.style.width = "130px";
+    tijeras.style.height = "130px";
+    tijeras.style.background = "yellow";
+}
+
+function sobreLagarto(){
+    lagarto.style.width = "130px";
+    lagarto.style.height = "130px";
+    lagarto.style.background = "yellow";
+}
+
+function sobreSpock(){
+    spock.style.width = "130px";
+    spock.style.height = "130px";
+    spock.style.background = "yellow";
+}
+
+function fueraPiedra(){
+    piedra.style.width = "120px";
+    piedra.style.height = "120px";
+    piedra.style.background = "white";
+}
+
+function fueraPapel(){
+    papel.style.width = "120px";
+    papel.style.height = "120px";
+    papel.style.background = "white";
+}
+
+function fueraTijeras(){
+    tijeras.style.width = "120px";
+    tijeras.style.height = "120px";
+    tijeras.style.background = "white";
+}
+
+function fueraLagarto(){
+    lagarto.style.width = "120px";
+    lagarto.style.height = "120px";
+    lagarto.style.background = "white";
+}
+
+function fueraSpock(){
+    spock.style.width = "120px";
+    spock.style.height = "120px";
+    spock.style.background = "white";
+}
+
 window.onload = function(){
 
     piedra = document.getElementById("piedra-player1");
@@ -277,5 +342,17 @@ window.onload = function(){
     tijeras.addEventListener("click",seleccionTijeras);
     lagarto.addEventListener("click",seleccionLagarto);
     spock.addEventListener("click",seleccionSpock);
+
+    piedra.addEventListener("mouseover",sobrePiedra);
+    papel.addEventListener("mouseover",sobrePapel);
+    tijeras.addEventListener("mouseover",sobreTijeras);
+    lagarto.addEventListener("mouseover",sobreLagarto);
+    spock.addEventListener("mouseover",sobreSpock);
+
+    piedra.addEventListener("mouseout",fueraPiedra);
+    papel.addEventListener("mouseout",fueraPapel);
+    tijeras.addEventListener("mouseout",fueraTijeras);
+    lagarto.addEventListener("mouseout",fueraLagarto);
+    spock.addEventListener("mouseout",fueraSpock);
 
 }
