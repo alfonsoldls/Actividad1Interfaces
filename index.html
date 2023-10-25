@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="ppt.js"></script>
     <title>Piedra, papel, tijera, lagarto o Spock</title>
     <h1>Piedra, papel, tijera, lagarto o Spock</h1>
 </head>
@@ -17,12 +18,22 @@
     </header>
     <main>
         <div id="player1">
-            <img src="images\piedra.png" alt="Piedra" class="players">
-            <img src="images\papel.png" alt="Papel" class="players">
-            <img src="images\tijeras.png" alt="Tijeras" class="players">
-            <img src="images\lagarto.png" alt="Lagarto" class="players">
-            <img src="images\spock.png" alt="Spock" class="players">
-        </div>
+            <button id="piedra-player1">
+                <img type="button" src="images/piedra.png" alt="Piedra" class="players">
+            </button>
+            <button id="papel-player1">
+                <img src="images/papel.png" alt="Papel" class="players">
+            </button>
+            <button id="tijeras-player1">
+                <img src="images/tijeras.png" alt="Tijeras" class="players">
+            </button>
+            <button id="lagarto-player1">
+                <img src="images/lagarto.png" alt="Lagarto" class="players">
+            </button>
+            <button id="spock-player1">
+                <img src="images/spock.png" alt="Spock" class="players">
+            </button>
+            </div>
         <div id="game">
             <div id="contador">
                 <div id="nombre-jugador-pantalla">
@@ -42,9 +53,9 @@
                 </div>
             </div>
             <div id="partida">
-                <img src="images/blank.png" alt="Player 1" class="eleccion-player1">
-                <img src="images\vs.png" alt="VS" class="vs">
-                <img src="images/blank.png" alt="Player 2" class="eleccion-player2">
+                <img id="eleccion-player1" src="images/blank.png" alt="Player 1">
+                <img src="images/vs.png" alt="VS" class="vs">
+                <img id="eleccion-player2" src="images/blank.png" alt="Player 2">
             </div>
             <div id="anuncio">
                 <img src="images/blank.png" alt="resultado" class="resultado">
@@ -52,11 +63,11 @@
 
         </div>
         <div id ="player2">
-            <img src="images\piedra.png" alt="Piedra" class="players">
-            <img src="images\papel.png" alt="Papel" class="players">
-            <img src="images\tijeras.png" alt="Tijeras" class="players">
-            <img src="images\lagarto.png" alt="Lagarto" class="players">
-            <img src="images\spock.png" alt="Spock" class="players">
+            <img id ="piedra-computer" src="images/piedra.png" alt="Piedra" class="players">
+            <img id ="papel-computer" src="images/papel.png" alt="Papel" class="players">
+            <img id ="tijeras-computer" src="images/tijeras.png" alt="Tijeras" class="players">
+            <img id ="lagarto-computer" src="images/lagarto.png" alt="Lagarto" class="players">
+            <img id ="spock-computer" src="images/spock.png" alt="Spock" class="players">
         </div>
     </main>
     <footer></footer>
