@@ -16,7 +16,39 @@ let imagenPapel;
 let imagenTijeras;
 let imagenLagarto;
 let imagenSpock;
+let resultado;
+let marcadorJugador;
+let marcadorComputer;
+let botonJugar;
+let nombreJugador;
+let nombreJugadorPantalla;
+let marcadorJugadorPantalla;
+let marcadorDividor;
+let marcadorJugadorComputer;
+let nombreJugadorComputer;
 
+function actualizarResultado(){
+    marcadorJugadorPantalla.innerHTML="<h2> "+ marcadorJugador +" </h2>";
+    marcadorJugadorComputer.innerHTML="<h2> "+ marcadorComputer +" </h2>";
+}
+
+function play(){
+    nombreJugador = document.getElementById("nombre-jugador").value;
+    if (nombreJugador == ""){
+        alert("Debe introducir un nombre para poder jugar")
+    }else{
+        resultado.innerHTML="<h1>¡BUENA SUERTE!</h1>";
+        eleccionP1.src = "images/blank.png";
+        eleccionComputer.src = "images/blank.png";
+        marcadorJugador = 0;
+        marcadorComputer = 0;
+        nombreJugadorPantalla.innerHTML="<h2> "+ nombreJugador +" </h2>";
+        marcadorJugadorPantalla.innerHTML="<h2> "+ marcadorJugador +" </h2>";
+        marcadorDividor.innerHTML="<h2> - </h2>";
+        marcadorJugadorComputer.innerHTML="<h2> "+ marcadorComputer +" </h2>";
+        nombreJugadorComputer.innerHTML="<h2> Computer</h2>";
+    }
+}
 
 function resultadoComputer(){
     let opciones = ['piedra', 'papel', 'tijeras', 'lagarto', 'spock'];
@@ -47,23 +79,31 @@ function juego(p1, cp){
         case 'piedra':
             switch (cp){
                 case 'piedra':
-                    alert("empate");
+                    resultado.innerHTML="<h1>EMPATE</h1>"
                 break;
 
                 case 'papel':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
         
                 case 'tijeras':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
         
                 case 'lagarto':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
         
                 case 'spock':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
             }
         break;
@@ -71,23 +111,31 @@ function juego(p1, cp){
         case 'papel':
             switch (cp){
                 case 'piedra':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
 
                 case 'papel':
-                    alert("empate");
+                    resultado.innerHTML="<h1>EMPATE</h1>"
                 break;
         
                 case 'tijeras':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
         
                 case 'lagarto':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
         
                 case 'spock':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
             }
         break;
@@ -95,23 +143,31 @@ function juego(p1, cp){
         case 'tijeras':
             switch (cp){
                 case 'piedra':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
 
                 case 'papel':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
         
                 case 'tijeras':
-                    alert("empate");
+                    resultado.innerHTML="<h1>EMPATE</h1>"
                 break;
         
                 case 'lagarto':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
         
                 case 'spock':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
             }
         break;
@@ -119,23 +175,31 @@ function juego(p1, cp){
         case 'lagarto':
             switch (cp){
                 case 'piedra':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
 
                 case 'papel':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
         
                 case 'tijeras':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
         
                 case 'lagarto':
-                    alert("empate");
+                    resultado.innerHTML="<h1>EMPATE</h1>"
                 break;
         
                 case 'spock':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
             }
         break;
@@ -143,23 +207,31 @@ function juego(p1, cp){
         case 'spock':
             switch (cp){
                 case 'piedra':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
 
                 case 'papel':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
         
                 case 'tijeras':
-                    alert("has ganado");
+                    resultado.innerHTML="<h1>HAS GANADO</h1>"
+                    marcadorJugador++;
+                    actualizarResultado();
                 break;
         
                 case 'lagarto':
-                    alert("has perdido");
+                    resultado.innerHTML="<h1>HAS PERDIDO</h1>"
+                    marcadorComputer++;
+                    actualizarResultado();
                 break;
         
                 case 'spock':
-                    alert("empate");
+                    resultado.innerHTML="<h1>EMPATE</h1>"
                 break;
             }
         break;
@@ -334,8 +406,18 @@ window.onload = function(){
     lagartoComputer = document.getElementById("lagarto-computer");
     spockComputer = document.getElementById("spock-computer");
 
+    resultado = document.getElementById("anuncio");
+    //nombreJugador = document.getElementById("nombre-jugador").value;
+    botonJugar = document.getElementById("boton-jugar");
+
     eleccionP1 = document.getElementById("eleccion-player1");
     eleccionComputer = document.getElementById("eleccion-player2");
+
+    nombreJugadorPantalla = document.getElementById("nombre-jugador-pantalla");
+    marcadorJugadorPantalla = document.getElementById("marcador-jugador1");
+    marcadorDividor = document.getElementById("marcador-divisor");
+    marcadorJugadorComputer = document.getElementById("marcador-computer");
+    nombreJugadorComputer = document.getElementById("nombre-rival-pantalla");
 
     piedra.addEventListener("click",seleccionPiedra);
     papel.addEventListener("click",seleccionPapel);
@@ -354,5 +436,8 @@ window.onload = function(){
     tijeras.addEventListener("mouseout",fueraTijeras);
     lagarto.addEventListener("mouseout",fueraLagarto);
     spock.addEventListener("mouseout",fueraSpock);
+    
+    botonJugar.addEventListener("click",play);
 
+    
 }

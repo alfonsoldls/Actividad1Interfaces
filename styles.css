@@ -18,7 +18,6 @@ main {
 #player1, #player2 {
     flex: 0 0 10%; 
     text-align: center;
-    border: 2px solid black;
 }
 
 #game {
@@ -28,11 +27,10 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 2px solid black;
+
 }
 
 header {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,25 +60,21 @@ header {
 }
 
 .eleccion-player1 {
-    border: 2px solid black;
     width: 400px;
     height: 400px;
 }
 
 .eleccion-player2 {
-    border: 2px solid black;
     width: 400px;
     height: 400px;
 }
 
 .vs {
-    border: 2px solid black;
     width: 120px;
     height: 120px;
 }
 
 .resultado {
-    border: 2px solid black;
     width: 800px;
     height: 120px;
 }
@@ -89,8 +83,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Las demás propiedades ya las has definido anteriormente */
-    border: 2px solid black;
     margin: 15px;
 }
 
