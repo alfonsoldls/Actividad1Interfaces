@@ -27,6 +27,7 @@ let marcadorDividor;
 let marcadorJugadorComputer;
 let nombreJugadorComputer;
 let puedeJugar = 0;
+let marcador;
 
 function actualizarResultado(){
     marcadorJugadorPantalla.innerHTML="<h1> "+ marcadorJugador +" </h1>";
@@ -50,6 +51,10 @@ function play(){
         nombreJugadorComputer.innerHTML="<h2> Computer</h2>";
         todosBlanco()
         puedeJugar++;
+        resultado.style.border="2px solid black";
+        nombreJugadorPantalla.style.border="2px solid black";
+        nombreJugadorComputer.style.border="2px solid black";
+        marcador.style.border="2px solid black";
     }
 }
 
@@ -429,8 +434,8 @@ window.onload = function(){
     spockComputer = document.getElementById("spock-computer");
 
     resultado = document.getElementById("anuncio");
-    //nombreJugador = document.getElementById("nombre-jugador").value;
     botonJugar = document.getElementById("boton-jugar");
+    marcador = document.getElementById("contador");
 
     eleccionP1 = document.getElementById("eleccion-player1");
     eleccionComputer = document.getElementById("eleccion-player2");

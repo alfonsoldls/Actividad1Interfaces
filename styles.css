@@ -1,5 +1,11 @@
-h1 {
+#titulopagina {
     text-align: center;
+    border: 2px solid black;
+    margin-left: 675px;
+    margin-right: 675px;
+    background-color: grey;
+    color: white;
+    border-radius: 20px;
 }
 
 .players {
@@ -13,13 +19,72 @@ h1 {
 main {
     display: flex;
     align-items: center;
+    background-image: url("images/fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 2px solid black;
 }
 
-#player1, #player2 {
+#player1 {
     flex: 0 0 10%; 
     text-align: center;
-    border: 2px solid black;
     height: 750px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#player2 {
+    flex: 0 0 10%; 
+    text-align: center;
+    height: 750px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#piedra-player1 {
+    border-radius: 20px;
+    border: 0px;
+}
+#papel-player1 {
+    border-radius: 20px;
+    border: 0px;
+}
+#tijeras-player1 {
+    border-radius: 20px;
+    border: 0px;
+}
+#lagarto-player1 {
+    border-radius: 20px;
+    border: 0px;
+}
+#spock-player1 {
+    border-radius: 20px;
+    border: 0px;
+}
+#piedra-computer {
+    border-radius: 20px;
+    border: 0px;
+}
+#papel-computer {
+    border-radius: 20px;
+    border: 0px;
+}
+#tijeras-computer {
+    border-radius: 20px;
+    border: 0px;
+}
+#lagarto-computer {
+    border-radius: 20px;
+    border: 0px;
+}
+#spock-computer {
+    border-radius: 20px;
+    border: 0px;
 }
 
 #game {
@@ -29,9 +94,15 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 2px solid black;
-    height: 750px;
-    background-image: url("images/tijeras.png");
+    height: 750px;    
+}
+
+#contador {
+    background-color: grey;
+    width: 120px;
+    border-radius: 20px;
+    color: white;
+    gap: 10px;
 }
 
 header {
@@ -40,6 +111,12 @@ header {
     align-items: center;
     height: 100px;
     border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    background-image: url("images/fondomenu.png");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 25%;
 }
 
 .left,
@@ -74,19 +151,23 @@ header {
     gap: 5px;
 }
 
-#nombre-jugador {
-    margin-top: 10px;
+#titulo-jugador{
+    margin-top: 35px;
     height: 10px;
-    /* Agrega un poco de padding si quieres que el texto no esté pegado a los bordes */
+}
+
+
+#nombre-jugador {
+    margin-top: 35px;
+    height: 10px;
     padding: 5px 10px;
-    /* Esto es opcional pero da una apariencia más agradable al input */
     border-radius: 20px;
 }
 
 #boton-jugar {
     padding: 10px 20px;
-    /* Esto es opcional pero da una apariencia más agradable al input */
     border-radius: 20px;
+    margin-bottom: 35px;
 }
 
 .eleccion-player1 {
@@ -100,8 +181,8 @@ header {
 }
 
 .vs {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     margin: 120px;
 }
 
@@ -117,3 +198,28 @@ header {
     margin: 15px;
 }
 
+#anuncio {
+    background-color: grey;
+    width: 250px;
+    border-radius: 20px;
+    color: white;
+    gap: 10px;
+}
+
+#nombre-jugador-pantalla{
+    background-color: blue;
+    width: auto;
+    border-radius: 20px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#nombre-rival-pantalla{
+    background-color: red;
+    width: auto;
+    border-radius: 20px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
