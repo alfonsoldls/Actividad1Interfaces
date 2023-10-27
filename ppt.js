@@ -28,8 +28,8 @@ let marcadorJugadorComputer;
 let nombreJugadorComputer;
 
 function actualizarResultado(){
-    marcadorJugadorPantalla.innerHTML="<h2> "+ marcadorJugador +" </h2>";
-    marcadorJugadorComputer.innerHTML="<h2> "+ marcadorComputer +" </h2>";
+    marcadorJugadorPantalla.innerHTML="<h1> "+ marcadorJugador +" </h1>";
+    marcadorJugadorComputer.innerHTML="<h1> "+ marcadorComputer +" </h1>";
 }
 
 function play(){
@@ -43,10 +43,11 @@ function play(){
         marcadorJugador = 0;
         marcadorComputer = 0;
         nombreJugadorPantalla.innerHTML="<h2> "+ nombreJugador +" </h2>";
-        marcadorJugadorPantalla.innerHTML="<h2> "+ marcadorJugador +" </h2>";
-        marcadorDividor.innerHTML="<h2> - </h2>";
-        marcadorJugadorComputer.innerHTML="<h2> "+ marcadorComputer +" </h2>";
+        marcadorJugadorPantalla.innerHTML="<h1> "+ marcadorJugador +" </h1>";
+        marcadorDividor.innerHTML="<h1> - </h1>";
+        marcadorJugadorComputer.innerHTML="<h1> "+ marcadorComputer +" </h1>";
         nombreJugadorComputer.innerHTML="<h2> Computer</h2>";
+        todosBlanco()
     }
 }
 

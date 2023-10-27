@@ -10,11 +10,19 @@
 </head>
 <body>
     <header>
-        <div class="input-group">
-            <p>Introduzca su nombre:</p>
-            <input type="text" id="nombre-jugador" placeholder="Escribe tu nombre aquí...">
+        <div class="left">
+            <div id="nombre-jugador-pantalla"></div>
         </div>
-        <button id="boton-jugar">¡Jugar ya!</button>
+        <div class="center">
+            <div class="input-group">
+                <p>Introduzca su nombre:</p>
+                <input type="text" id="nombre-jugador" placeholder="Escribe tu nombre aquí...">
+            </div>
+            <button id="boton-jugar">¡Jugar ya!</button>
+        </div>
+        <div class="right">
+            <div id="nombre-rival-pantalla"></div>
+        </div>
     </header>
     <main>
         <div id="player1">
@@ -26,11 +34,9 @@
             </div>
         <div id="game">
             <div id="contador">
-                <div id="nombre-jugador-pantalla"></div>
                 <div id="marcador-jugador1"></div>
                 <div id="marcador-divisor"></div>
                 <div id="marcador-computer"></div>
-                <div id="nombre-rival-pantalla"></div>
             </div>
             <div id="partida">
                 <img id="eleccion-player1" src="images/blank.png" alt="Player 1">
