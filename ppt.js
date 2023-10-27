@@ -26,6 +26,7 @@ let marcadorJugadorPantalla;
 let marcadorDividor;
 let marcadorJugadorComputer;
 let nombreJugadorComputer;
+let puedeJugar = 0;
 
 function actualizarResultado(){
     marcadorJugadorPantalla.innerHTML="<h1> "+ marcadorJugador +" </h1>";
@@ -48,6 +49,7 @@ function play(){
         marcadorJugadorComputer.innerHTML="<h1> "+ marcadorComputer +" </h1>";
         nombreJugadorComputer.innerHTML="<h2> Computer</h2>";
         todosBlanco()
+        puedeJugar++;
     }
 }
 
@@ -240,157 +242,176 @@ function juego(p1, cp){
 }
 
 function seleccionPiedra(){
-    todosBlanco();
-    let p1 = "piedra";
-    eleccionP1.src = "images/piedra.png";
-    eleccionP1.style.height ="400px";
-    eleccionP1.style.width ="400px";
-    let cp = resultadoComputer();
-    juego(p1,cp);
-
+    if (puedeJugar>0){
+        todosBlanco();
+        let p1 = "piedra";
+        eleccionP1.src = "images/piedra.png";
+        eleccionP1.style.height ="400px";
+        eleccionP1.style.width ="400px";
+        let cp = resultadoComputer();
+        juego(p1,cp);
+    }else{
+        alert("Debe introducir un nombre y pulsar en el botón ¡Jugar ya!");
+    }
 }
 
 function seleccionPapel(){
-    todosBlanco();
-    let p1 = "papel";
-    eleccionP1.src = "images/papel.png";
-    eleccionP1.style.height ="400px";
-    eleccionP1.style.width ="400px";
-    let cp = resultadoComputer();
-    juego(p1,cp);
+    if (puedeJugar>0){
+        todosBlanco();
+        let p1 = "papel";
+        eleccionP1.src = "images/papel.png";
+        eleccionP1.style.height ="400px";
+        eleccionP1.style.width ="400px";
+        let cp = resultadoComputer();
+        juego(p1,cp);
+    }else{
+        alert("Debe introducir un nombre y pulsar en el botón ¡Jugar ya!");
+    }
 }
 
 function seleccionTijeras(){
-    todosBlanco();
-    let p1 = "tijeras";
-    eleccionP1.src = "images/tijeras.png";
-    eleccionP1.style.height ="400px";
-    eleccionP1.style.width ="400px";
-    let cp = resultadoComputer();
-    juego(p1,cp);
+    if (puedeJugar>0){
+        todosBlanco();
+        let p1 = "tijeras";
+        eleccionP1.src = "images/tijeras.png";
+        eleccionP1.style.height ="400px";
+        eleccionP1.style.width ="400px";
+        let cp = resultadoComputer();
+        juego(p1,cp);
+    }else{
+        alert("Debe introducir un nombre y pulsar en el botón ¡Jugar ya!");
+    }
 }
 
 function seleccionLagarto(){
-    todosBlanco();
-    let p1 = "lagarto";
-    eleccionP1.src = "images/lagarto.png";
-    eleccionP1.style.height ="400px";
-    eleccionP1.style.width ="400px";
-    let cp = resultadoComputer();
-    juego(p1,cp);
+    if (puedeJugar>0){
+        todosBlanco();
+        let p1 = "lagarto";
+        eleccionP1.src = "images/lagarto.png";
+        eleccionP1.style.height ="400px";
+        eleccionP1.style.width ="400px";
+        let cp = resultadoComputer();
+        juego(p1,cp);
+    }else{
+        alert("Debe introducir un nombre y pulsar en el botón ¡Jugar ya!");
+    }
 }
 
 function seleccionSpock(){
-    todosBlanco();
-    let p1 = "spock";
-    eleccionP1.src = "images/spock.png";
-    eleccionP1.style.height ="400px";
-    eleccionP1.style.width ="400px";
-    let cp = resultadoComputer();
-    juego(p1,cp);
+    if (puedeJugar>0){
+        todosBlanco();
+        let p1 = "spock";
+        eleccionP1.src = "images/spock.png";
+        eleccionP1.style.height ="400px";
+        eleccionP1.style.width ="400px";
+        let cp = resultadoComputer();
+        juego(p1,cp);
+    }else{
+        alert("Debe introducir un nombre y pulsar en el botón ¡Jugar ya!");
+    }
 }
 
 function computerPiedra(){
     eleccionComputer.src = "images/piedra.png";
     eleccionComputer.style.height ="400px";
     eleccionComputer.style.width ="400px";
-    piedraComputer.style.background = "green";
+    piedraComputer.style.background = "red";
 }
 
 function computerPapel(){
     eleccionComputer.src = "images/papel.png";
     eleccionComputer.style.height ="400px";
     eleccionComputer.style.width ="400px";
-    papelComputer.style.background = "green";
+    papelComputer.style.background = "red";
 }
 
 function computerTijeras(){
     eleccionComputer.src = "images/tijeras.png";
     eleccionComputer.style.height ="400px";
     eleccionComputer.style.width ="400px";
-    tijerasComputer.style.background = "green";
+    tijerasComputer.style.background = "red";
 }
 
 function computerLagarto(){
     eleccionComputer.src = "images/lagarto.png";
     eleccionComputer.style.height ="400px";
     eleccionComputer.style.width ="400px";
-    lagartoComputer.style.background = "green";
+    lagartoComputer.style.background = "red";
 }
 
 function computerSpock(){
     eleccionComputer.src = "images/spock.png";
     eleccionComputer.style.height ="400px";
     eleccionComputer.style.width ="400px";
-    spockComputer.style.background = "green";
+    spockComputer.style.background = "red";
 }
 
 function todosBlanco(){
-    piedraComputer.style.background = "white";
-    papelComputer.style.background = "white";
-    tijerasComputer.style.background = "white";
-    lagartoComputer.style.background = "white";
-    spockComputer.style.background = "white";
+    piedraComputer.style.background = "transparent";
+    papelComputer.style.background = "transparent";
+    tijerasComputer.style.background = "transparent";
+    lagartoComputer.style.background = "transparent";
+    spockComputer.style.background = "transparent";
 }
 
 function sobrePiedra(){
     piedra.style.width = "130px";
     piedra.style.height = "130px";
-    piedra.style.background = "yellow";
+    piedra.style.background = "blue";
 }
 
 function sobrePapel(){
     papel.style.width = "130px";
     papel.style.height = "130px";
-    papel.style.background = "yellow";
+    papel.style.background = "blue";
 }
 
 function sobreTijeras(){
     tijeras.style.width = "130px";
     tijeras.style.height = "130px";
-    tijeras.style.background = "yellow";
+    tijeras.style.background = "blue";
 }
 
 function sobreLagarto(){
     lagarto.style.width = "130px";
     lagarto.style.height = "130px";
-    lagarto.style.background = "yellow";
+    lagarto.style.background = "blue";
 }
 
 function sobreSpock(){
     spock.style.width = "130px";
     spock.style.height = "130px";
-    spock.style.background = "yellow";
+    spock.style.background = "blue";
 }
 
 function fueraPiedra(){
     piedra.style.width = "120px";
     piedra.style.height = "120px";
-    piedra.style.background = "white";
+    piedra.style.background = "transparent";
 }
 
 function fueraPapel(){
     papel.style.width = "120px";
     papel.style.height = "120px";
-    papel.style.background = "white";
+    papel.style.background = "transparent";
 }
 
 function fueraTijeras(){
     tijeras.style.width = "120px";
     tijeras.style.height = "120px";
-    tijeras.style.background = "white";
+    tijeras.style.background = "transparent";
 }
 
 function fueraLagarto(){
     lagarto.style.width = "120px";
     lagarto.style.height = "120px";
-    lagarto.style.background = "white";
+    lagarto.style.background = "transparent";
 }
 
 function fueraSpock(){
     spock.style.width = "120px";
     spock.style.height = "120px";
-    spock.style.background = "white";
+    spock.style.background = "transparent";
 }
 
 window.onload = function(){
