@@ -2,35 +2,34 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="codigo.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piedra, papel, tijeras, lagarto, spock </title>
     <link rel="stylesheet" href="elementos.css">
+    <script src="codigo.js"></script>
+    <title>Piedra, papel, tijeras, lagarto, spock </title>
     </head>
     <body>
         <header class="titulo">
             <h1>PIEDRA - PAPEL - TIJERAS - LAGARTO - SPOCK</h1>
         </header>
-        <form>
-            Nombre jugador: <input type="text" id="cajaNombre" > <span id="errorNombre"></span>
-            <input type="button" value="Jugar" id="botonJugar" />
-        </form>
+        <nav>
+            <form>
+            <label>Introduce tu nombre</label>
+            <input type="text" id="introducirNombre" autofocus/>
+            <input type="button" id="botonIniciar" value="Iniciar" style="cursor: pointer">
+            <span id="errorNombre"></span>
+            </form> 
+        </nav>
         <main>
-            <p class="instrucciones" id="instrucciones"></p>
-            <h2>Ganará el mejor de tres</h2>
-            <div class="marcador">
-                <p class="nombreJugador">Jugador</p>
-                <p class="nombreOponente">Ordenador</p>
-                <p class="puntos">
-                    <span id="puntosJugador">0</span>
-                    <span>-</span>
-                    <span id="puntosOponente">0</span>
-                </p>
+            <div class= "marcador" id="marcador">
+                <div class="jugador contador">Jugador</div>
+                <div class="oponente contador">Oponente</div>
+                <span id="puntos-jugador">0</span>
+                <span>-</span>
+                <span id="puntos-oponente">0</span>          
             </div>
-            <div class="eligeOpcion">
+            <div class="eligeOpcion" id="eligeOpcion">
                 <div class="opcionesPosibles">
-                    <button class="opcion" id="piedra">🪨</button>
+                    <button class="opcion" id="piedra">🪨 </button>
                     <button class="opcion" id="papel">📋</button>
                     <button class="opcion" id="tijeras">✂️</button>
                     <button class="opcion" id="lagarto">🦎</button>
@@ -38,7 +37,11 @@
                 </div>
             </div>
             <div class="mensaje" id="mensaje">
+                <p>
+                El jugador ha elegido <span class="eleccion" id="eleccionJugador">papel📋</span><br>
+                El oponente ha elegido <span class="eleccion" id="eleccionOponente">tijeras✂️</span>
                 <p id="ganaPunto">🎉 !Ganaste! 🎉</p>
+            </p>
             </div>
             <button class="boton" id="botonReiniciar">Jugar de nuevo</button>
         </main>  

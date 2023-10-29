@@ -1,88 +1,75 @@
-let cajaNombre;
-let errorNombre;
-let botonJugar;
-let instrucciones;
-let puntosJugador;
-let puntosOponente;
-let opcionesPosibles;
-let mensaje;
-let ganaPunto;
-let botonReiniciar;
+let contenedorpuntosJugador = document.querySelector("#puntos-jugador");
+let contenedorpuntosOponente = document.querySelector("#puntos-oponente");
+let mensaje = document.querySelector ("#mensaje");
+let contenedorganaPunto = document.querySelector("#ganaPunto");
+let eligeOpcion = document.querySelector("#eligeOpcion");
+let contenedoreleccionJugador = document.querySelector("#eleccionJugador");
+let contenedoreleccionOponente = document.querySelector("#eleccionOponente");
+
+let botonesOpciones = document.querySelectorAll(".opcion");
+botonesOpciones.forEach(boton => {
+    boton.addEventListener("click", iniciarTurno);
+});
 
 
-
-// Función para reiniciar el juego
-function reiniciarJuego() {
-    puntosJugador = 0;
-    puntosOponente = 0;
-    puntosJugador.textContent = puntosJugador;
-    puntosOponente.textContent = puntosOponente;
-    mensaje.textContent = '';
-    reiniciar.classList.add('disabled');
-}
+function iniciarTurno(e){
+    let eleccionOponente = Math.random() * 5;
+    let eleccionJugador = e.currentTarget.id;
   
-
-function Jugar(eleccionJugador){
-    opcionesPosibles = ['piedra', 'papel', 'tijeras', 'lagarto', 'spock'];
-    const eleccionOponente = opcionesPosibles[Math.floor(Math.random() * opcionesPosibles.length)];
-  
-    if (eleccionOrdenador === 1){
-        eleccionOrdenador = "piedra"
-    }else if (eleccionOrdenador === 2){
-        eleccionOrdenador = "papel"
-    }else if (eleccionOrdenador === 3){
-        eleccionOrdenador = "tijeras"
-    }else if (eleccionOrdenador === 4){
-        eleccionOrdenador = "lagarto"
-    }else if (eleccionOrdenador === 5){
-        eleccionOrdenador = "spock"
+    if (eleccionOponente === 1){
+        eleccionOponente = "piedra"
+    }else if (eleccionOponente === 2){
+        eleccionOponente = "papel"
+    }else if (eleccionOponente === 3){
+        eleccionOponente = "tijeras"
+    }else if (eleccionOponente === 4){
+        eleccionOponente = "lagarto"
+    }else if (eleccionOponente === 5){
+        eleccionOponente = "spock"
     }else {
         alert("El numero introducido no es válido")
     }
           
     //DECIDIENDO EL GANADOR
     if (
-     (eleccionJugador == 1 && eleccionOrdenador == 3) ||
-     (eleccionJugador == 2 && eleccionOrdenador == 1) ||
-     (eleccionJugador == 3 && eleccionOrdenador == 2) ||
-     (eleccionJugador == 4 && eleccionOrdenador == 5) ||
-     (eleccionJugador == 5 && eleccionOrdenador == 4) 
+     (eleccionJugador === "piedra🪨" && eleccionOponente === "tijeras✂️") ||
+     (eleccionJugador === "papel📋" && eleccionOponente === "piedra🪨") ||
+     (eleccionJugador === "tijeras✂️" && eleccionOponente === "papel📋") ||
+     (eleccionJugador === "lagarto🦎" && eleccionOponente === "spock🖖") ||
+     (eleccionJugador === "spock🖖" && eleccionOponente === "lagarto🦎") 
     ) {
         ganaJugador();
 
     }else if (
-     (eleccionOrdenador == 1 && eleccionJugador == 3) ||
-     (eleccionOrdenador == 2 && eleccionJugador == 1) ||
-     (eleccionOrdenador == 3 && eleccionJugador == 2) ||
-     (eleccionOrdenador == 4 && eleccionJugador == 5) ||
-     (eleccionOrdenador == 5 && eleccionJugador == 4) 
+     (eleccionOponente === "piedra🪨" && eleccionJugador === "tijeras✂️") ||
+     (eleccionOponente === "papel📋" && eleccionJugador === "piedra🪨") ||
+     (eleccionOponente === "tijeras✂️" && eleccionJugador === "papel📋") ||
+     (eleccionOponente === "lagarto🦎" && eleccionJugador === "spock🖖") ||
+     (eleccionOponente === "spock🖖" && eleccionJugador === "lagarto🦎") 
     ) {
-        ganaOrdenador();
+        ganaOponente();
 
     }else {
         empate();
     }
 
+        mensaje.classList.remove("disabled");
+        contenedoreleccionJugador.innerText = eleccionJugador;
+        contenedoreleccionOponente.innerText = eleccionOponente;
 
-   
-    if (puntosJugador === 3 || puntosOponente === 3) {
-        if (puntosJugador === 3){
-            instrucciones.innerText = "!Has ganado"
+        if (puntosJugador === 3 || puntosOponente === 3) {
+            if (puntosJugador === 3){
+                instrucciones.innerText = "!Has ganado"
+            }
+    
+            if (puntosOponente === 3){
+                instrucciones.innerText = "!Tu oponente ha ganado"
+            }
+
+            eligeOpcion.classList.add("disabled");
+            botonReiniciar.classList.remove("disabled");
+            botonReiniciar.addEventListener("click", reiniciarJuego)
         }
-
-        if (puntosOponente === 3){
-            instrucciones.innerText = "!Tu oponente ha ganado"
-        }
-    }
-
-
-    // Agregar eventos a las opciones
-    opciones.forEach(opcion => {
-        opcion.addEventListener('click', () => {
-            jugar(opcion.id);
-    });
-});
-
 }
 
 function ganaJugador(){
@@ -93,45 +80,22 @@ function ganaJugador(){
 
 function ganaOrdenador(){
     puntosOponenete++;
-    contenedorpuntosOponente.innerText = puntosOponente;
+    contenedorpuntosJugador.innerText = puntosJugador;
     contenedorganaPunto.innerText = "!El oponente gana un punto!😒";
 }
 
 function empate(){
     contenedorganaPunto.innerText = "!Habéis empatado!😊";
 }
+   
+   
+function reiniciarJuego(){
+    eligeOpcion.classList.add("disabled");
+    botonReiniciar.classList.remove("disabled");
+    mensaje.classList.add("disabled");
+	puntosJugador = 0;
+    puntosOponente = 0;
+    contenedorpuntosJugador.innerText = puntosJugador;
+}   contenedorpuntosOponente.innerText = puntosOponente;
 
-function resetear(){
-	botonReiniciar.disabled = true;
-    errorNombre.textContent = "";
-}
-
-function inicializarVariables(){
-botonJugar = document.getElementById("botonJugar");
-instrucciones = document.getElementById("instrucciones");
-opciones = document.querySelectorAll('.Opcion');
-puntosJugador = document.getElementById("puntosJugador");
-puntosOponente = document.getElementById("puntosOponente");
-mensaje = document.getElementById("mensaje");
-ganaPunto = document.getElementById("ganaPunto");
-botonReiniciar = document.getElementById("botonReiniciar");
-}
-
-
-// PONER A LA ESCUCHA DE EVENTOS A TODOS LOS POSIBLES ELEMENTOS DE LA PAGINA
-function setListeners(){
-	botonJugar.addEventListener("click", Jugar);
-    botonReiniciar.addEventListener("click", reiniciarJuego);
-    
-
-}
-
-window.addEventListener("load",()=>{
-	inicializarVariables();
-	setListeners();
-
-    cajaNombre.focus();
-    botonReiniciar.disabled = true;
-
-});
 
